@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
     res.send("Hello from home");
 });
 
-mongoose.connect("mongodb+srv://anuragforwork0018:u2juTYUAM3Dq1E4K@bblog.daals07.mongodb.net/bblog?retryWrites=true&w=majority&appName=bblog")
+mongoose.connect(process.env.MONGO_DB_URL)
     .then(() => {
         console.log("Connected to Database");
         app.listen(port, () => {
